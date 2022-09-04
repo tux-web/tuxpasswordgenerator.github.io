@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de contraseñas</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Angel Tux">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="images/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <h1>Generador de contraseñas <i class="fa-solid fa-key"></i></h1>
+        <span class="creditos">Por <a href="https://www.linkedin.com/in/angel-tux" target="_blank" class="tux">Tux</a></span>
+        <form id="form-container">
+            <div id="contraseña-resultado-container">
+                <span id="contraseña-resultado">C0nTR4<span id="simbolo-dinero">$</span>3Ña</span>
+                <i class="fa-regular fa-copy" id="copiar-icono"></i>
+            </div>
+
+            <section id="bottom-container">
+                <div id="input-largo-container">
+                    <div id="input-largo-texto">
+                        <label for="input-largo">Longitud</label>
+                        <span id="largo-resultado">15</span>
+                    </div>
+                    <div id="input-lago-container">
+                        <span class="barra-slider"></span>
+                        <span class="fill"></span>
+                        <input type="range" min="1" max="20" value="15" step="0.1" id="input-largo" name="largo">
+                    </div>
+                </div>
+
+                <section id="checkbox-container">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="checkbox-mayusculas" checked name="mayusculas">                    
+                        <i class="checkbox-personalizado"><i class="fa-solid fa-check"></i></i>
+                        <label for="checkbox-mayusculas" class="label-checkbox">Incluir Letras Mayusculas</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="checkbox-minusculas" checked name="minusculas">
+                        <i class="checkbox-personalizado"><i class="fa-solid fa-check"></i></i>
+                        <label for="checkbox-minusculas" class="label-checkbox">Incluir Letras Minusculas</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="checkbox-numeros" checked name="numeros">
+                        <i class="checkbox-personalizado"><i class="fa-solid fa-check"></i></i>
+                        <label for="checkbox-numeros" class="label-checkbox">Incluir Numeros</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="checkbox-simbolos" checked name="simbolos">
+                        <i class="checkbox-personalizado"><i class="fa-solid fa-check"></i></i>
+                        <label for="checkbox-simbolos" class="label-checkbox">Incluir Simbolos</label>
+                    </div>
+                </section>
+
+                <div id="fuerza-container">
+                    <span>FUERZA</span>
+                    <div id="fuerza-right">
+                        <span id="fuerza-nombre">MEDIA</span>
+                        <div id="barras-container">
+                            <span class="barra"></span>
+                            <span class="barra"></span>
+                            <span class="barra"></span>
+                            <span class="barra"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="btn-generar">
+                    GENERAR
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </section>
+        </form>
+        <span id="alerta" class="invisible"></span>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        var $slider = $("#input-largo");
+        var $fill = $("#input-largo-container .fill");
+
+        function setBar() {
+            $fill.css("width", (($slider.val() * 5) - 5.5) + "%");
+        }
+        $slider.on("input", setBar);
+        
+        setBar();
+    </script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

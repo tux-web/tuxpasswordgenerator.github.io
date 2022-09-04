@@ -1,0 +1,354 @@
+/*VARIABLES*/
+
+:root {
+    --fondo: rgb(30, 33, 37);
+    --fondo-claro: rgb(55, 54, 61);
+    --fuente: rgb(147, 144, 151);
+    --fuente-resaltado: rgb(228, 228, 228);
+    --verde-neon: rgb(140, 255, 169);
+    --rojo: rgb(255, 100, 100);
+    --amarillo: rgb(233, 198, 124);
+    --verde-shadow: rgba(140, 255, 169, 0.384);
+}
+
+* {
+    font-family: 'Space Mono', monospace;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--fondo);
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+.creditos {
+    color: var(--fuente-resaltado);
+    font-size: 14px;
+}
+
+h1 {
+    color: var(--fuente);
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.tux {
+    color: var(--fuente-resaltado);
+    font-weight: bold;
+}
+
+#form-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#form-container > * {
+    width: 100%;
+}
+
+#contraseña-resultado-container,
+#bottom-container {
+    background-color: var(--fondo-claro);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#contraseña-resultado-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px; 
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#contraseña-resultado {
+    color: var(--fuente);
+    font-weight: bold;
+    font-size: 26px;
+    position: relative;
+}
+
+#simbolo-dinero {
+    font-weight: normal;
+    position: relative;
+    top: 2px;
+}
+
+#copiar-icono {
+    font-size: 28px;
+    color:var(--verde-neon);
+    cursor: pointer;
+}
+
+#copiar-icono:hover {
+    color: var(--fuente-resaltado);
+}
+
+#input-largo-texto {
+    display: flex;
+    justify-content: space-between;
+}
+
+#input-largo-container label {
+    color: var(--fuente-resaltado);
+    font-weight: bold;
+}
+
+#largo-resultado {
+    font-weight: bold;
+    font-size: 28px;
+    color: var(--verde-neon);
+    text-align: end;
+}
+
+#input-largo-container {
+    position: relative;
+    width: 100%;
+}
+
+#input-largo-container .barra-slider {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    overflow: hidden;
+    background-color: transparent;
+    z-index: -1;
+}
+
+#input-largo-container .fill {
+    display: block;
+    width: 0;
+    height: 6px;
+    background-color: var(--verde-neon);
+    transition: none;
+    z-index: 10;
+    position: relative;
+    top: 15px;
+}
+
+#input-largo {
+    margin: 0px 0 20px 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    outline: none;
+    width: 100%;
+    z-index: 3;
+}
+
+#input-largo::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    outline: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--fuente-resaltado);
+    box-shadow: 0 0 0 0 var(--verde-shadow);
+    margin-top: -9px;
+    transition: .3s ease-in-out;
+}
+
+#input-largo::-webkit-slider-thumb:hover {
+    border: 2px solid var(--verde-neon);
+    background-color: var(--fondo);
+}
+
+#input-largo:active::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 4px 6px var(--verde-shadow);
+}
+
+#input-largo::-webkit-slider-runnable-track {
+    height: 6px;
+}
+
+#input-largo:focus {
+    outline: none;
+}
+
+#checkbox-container {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 16px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked + .checkbox-personalizado{
+    background-color: var(--verde-neon);
+    border: 2px solid var(--verde-neon);
+}
+
+.checkbox-personalizado {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--fuente-resaltado);
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox-borde-hover {
+    border: 2px solid var(--verde-neon);
+}
+
+.fa-check {
+    color: var(--fondo-claro);
+    font-size: 14px;
+    position: relative;
+    top: 1px;
+}
+
+.label-checkbox{
+    position: relative;
+    padding-left: 20px;
+    color: var(--fuente-resaltado);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#fuerza-container {
+    background-color: var(--fondo);
+    margin: 20px 0;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#fuerza-right {
+    display: flex;
+    gap: 10px;
+}
+
+#fuerza-right #fuerza-nombre {
+    color: var(--fuente-resaltado);
+}
+
+#fuerza-container span {
+    font-size: 18px;
+    color: var(--fuente);
+    font-weight: bold;
+}
+
+#barras-container {
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+}
+
+.barra {
+    display: block;
+    padding: 0px 3px;
+    border: 2px solid var(--fuente-resaltado);
+}
+
+.barra-vacia {
+    background-color: var(--fondo);
+}
+
+.rojo {
+    background-color: var(--rojo);
+    border: none;
+    border: 2px solid var(--rojo);
+}
+
+.amarillo {
+    background-color: var(--amarillo);
+    border: none;
+    border: 2px solid var(--amarillo);
+}
+
+.verde {
+    background-color: var(--verde-neon);
+    border: none;
+    border: 2px solid var(--verde-neon);
+}
+
+#btn-generar {
+    background-color: var(--verde-neon);
+    border: none;
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--fondo);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#btn-generar:hover {
+    border: 2px solid var(--verde-neon);
+    background-color: var(--fondo-claro);
+    color: var(--verde-neon);
+}
+
+.fa-arrow-right {
+    position: relative;
+    top: 2px;
+}
+
+#alerta {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    border-radius: 5px;
+    position: relative;
+    top: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.simbolo {
+    font-family: arial;
+}
+
+.invisible {
+    opacity: 0;
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        width: calc(100% - 40px);
+    }
+}
